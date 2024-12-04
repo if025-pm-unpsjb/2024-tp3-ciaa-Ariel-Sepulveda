@@ -31,11 +31,7 @@ int main( void )
 
         	uartWriteByte(UART_USB, receivedByte);
         	if (idx >= 0 && idx <= 3) {
-				value = gpioRead(leds[idx]);
-				if (value == OFF)
-					gpioWrite(leds[idx], 1);
-				else
-					gpioWrite(leds[idx], 0);
+				gpioToggle(leds[idx]);
         	}
         }
 
