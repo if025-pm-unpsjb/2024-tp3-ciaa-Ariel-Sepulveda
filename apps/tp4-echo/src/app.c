@@ -30,7 +30,7 @@ int main( void )
 
         	cMessage[messageIndex++] = receivedByte;
         	if (receivedByte == '\r') {
-        		cMessage[messageIndex++] = '\0';
+        		cMessage[messageIndex++] = '\0\n';
         		uartWriteString(UART_USB, cMessage);
         		messageIndex = 0;
         		for (int i = 0; i < 25; i++) {
